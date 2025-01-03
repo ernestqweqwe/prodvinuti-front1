@@ -13,7 +13,10 @@ module.exports = {
         clean: true
     },
     plugins:[
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname,'public', 'index.html')
+        }),
+        new webpack.ProgressPlugin(),
     ]
 
 }
