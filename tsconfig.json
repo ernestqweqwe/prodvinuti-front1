@@ -6,6 +6,17 @@
       "target": "es5",
       "jsx": "react",
       "allowJs": true,
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      // позволяет работать с пакетами, который использует common js как с 
+      // обычными пакетами с помощбю import 
+      "esModuleInterop": true,
+      // позволяет писать вместо import * as      import просто
+      "allowSyntheticDefaultImports": true,
+
+    },
+    "ts-node": {
+      "compilerOptions": {
+        "module": "CommonJS"
+      }
     }
   }
