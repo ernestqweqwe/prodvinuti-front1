@@ -1,4 +1,7 @@
-const path = require('path');
+const path = require('path')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     // entry: './src/index.js' забись равносильна снизу
@@ -8,6 +11,9 @@ module.exports = {
         filename: "[name].[contenthash].js",
         path: path.resolve(__dirname, 'build'),
         clean: true
-    }
+    },
+    plugins:[
+        new HtmlWebpackPlugin()
+    ]
 
 }
