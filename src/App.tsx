@@ -4,15 +4,12 @@ import { AboutPageAsync } from './pages/AboutPage/AboutPage.async'
 import { MainPageAsync } from './pages/MainPage/MainPage.async'
 import { Suspense, useContext } from 'react'
 import { Theme, ThemeContext } from './themes/ThemeContext'
+import { useTheme } from './themes/useTheme'
 
 
 const App = () => {
 
-  const {theme, setTheme} = useContext(ThemeContext)
-
-  const toggleTheme = () => {
-    setTheme(theme === Theme.DARK?Theme.LIGHT:Theme.DARK)
-  }
+  const {theme,toggleTheme} = useTheme()
 
   return (
     <div className={`app ${theme}`}>
