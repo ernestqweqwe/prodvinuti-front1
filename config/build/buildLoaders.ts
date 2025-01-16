@@ -10,7 +10,10 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
           {
             loader:"css-loader",
             options:{
-              modules:true
+              modules:{
+                auto: (resPath:string) => Boolean(resPath.includes('.module.'))
+              }
+              
             }
           },
           "sass-loader",
